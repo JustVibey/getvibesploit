@@ -1,0 +1,248 @@
+body {
+    background-color: #333; /* Dark Gray */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll during animations */
+    transition: background-color 0.3s ease;
+}
+
+body:hover {
+    background-color: #444;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 0 20px rgba(148, 0, 211, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(148, 0, 211, 0.5);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 20px darkviolet;
+    }
+    100% {
+        text-shadow: 0 0 40px darkviolet;
+    }
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 20px darkviolet, 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 30px #9400D3, 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; /* Rounded corners */
+    animation: fadeIn 1s ease-in-out, moveUpDown 3s infinite alternate; /* Fade-in animation */
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: darkviolet;
+    font-size: 4em; /* Increased size */
+    text-shadow: 0 0 10px darkviolet, 2px 2px 4px rgba(0, 0, 0, 0.5); /* Glow and shadow */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+    animation: neonGlow 2s infinite alternate; /* Neon glow animation */
+}
+
+h1:hover {
+    color: #9400D3; /* Darker Violet on hover */
+}
+
+.main-content {
+    padding: 40px;
+    text-align: center;
+    flex: 1;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2); /* Add a subtle background */
+    box-shadow: 0 0 20px rgba(148, 0, 211, 0.3); /* Violet backglow */
+    animation: fadeInUp 1s ease-in-out, pulseShadow 2s infinite alternate; /* Slide-in animation */
+    transition: transform 0.3s ease;
+}
+
+.main-content:hover {
+    transform: scale(1.05);
+}
+
+.download-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: darkviolet;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+}
+
+.download-button:hover {
+    background-color: #9400D3; /* Darker Violet */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.discord-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #7289DA; /* Discord color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.discord-button:hover {
+    background-color: #677bc4; /* Darker Discord color */
+    transform: scale(1.1);
+}
+
+.features {
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(148, 0, 211, 0.3);
+    animation: fadeInUp 1s ease-in-out, slideInLeft 2s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.features:hover {
+    transform: translateX(5px);
+}
+
+.features h2 {
+    color: darkviolet;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflowing content */
+    box-shadow: 0 0 20px rgba(148, 0, 211, 0.5); /* Stronger violet backglow */
+}
+
+.hero img {
+    width: 100%; /* Make the image responsive */
+    max-height: 500px; /* Adjust as needed */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    transition: transform 0.5s ease; /* Smooth transition for scaling */
+}
+
+.hero:hover img {
+    transform: scale(1.1); /* Scale up image on hover */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: transform 0.3s ease;
+    transform: translate(-50%, -50%);
+    font-size: 3em; /* Adjust as needed */
+    color: white;
+    text-shadow: 0 0 20px darkviolet; /* Neon backglow effect */
+    animation: pulse 2s infinite alternate; /* Pulse animation */
+}
+
+.hero-text:hover {
+    transform: scale(1.1) translate(-50%, -50%);
+}
+
+footer {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out, slideInBottom 2s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+footer:hover {
+    transform: translateY(-5px);
+}
